@@ -18,8 +18,6 @@
     <script src="js/jquery.pagepiling.min.js"></script>
     <script src="js/shopify.js"></script>
     <script src="js/main.js"></script>
-    <!-- 日本語化対応 -->
-    <script src="lib/translations/ja_JP.js"></script>
 </head>
 <body>
     <div id="loading">
@@ -163,16 +161,16 @@
                 </span>
                     <a href="https://coffeemodify.myshopify.com/blogs/news/workshop" target=”_blank” rel="nofollow">詳しくはこちら</a>
                 </p>
-                <form action="#" method="post">
+                <form action="confirm.phphp" method="post">
                     <dl>
                       <dt><label for="name">名前</label></dt>
-                      <dd><input type="text" id="name" name="your-name" required></dd>
+                      <dd><input type="text" id="name" name="name" required></dd>
                       <dt><label for="email">メールアドレス</label></dt>
-                      <dd><input type="email" id="email" name="your-email" required></dd>
+                      <dd><input type="email" id="email" name="email" required></dd>
                       <dt><label for="date">予約日</label></dt>
-                      <dd><input type="date" id="date" name="your-date" min="2022-08-28" max="2022-09-30" step="14" required></dd>
+                      <dd><input type="date" id="date" name="date" required></dd>
                       <dt><label for="message">お問い合わせ</label></dt>
-                      <dd><textarea id="message" name="your-message"></textarea></dd>
+                      <dd><textarea id="message" name="message"></textarea></dd>
                     </dl>
                     <div class="button"><input id="submit" type="submit" value="送信"></div>
                   </form>
