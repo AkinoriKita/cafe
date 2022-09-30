@@ -110,7 +110,7 @@ if (!empty($_POST['btn_submit']) && empty($errors)) {
                 <p>ご予約ありがとうございます。</p>
                 <p>送信が完了しました。</p>
                 <div class="button">
-                    <input id="submit" type="submit" onclick="location.href='/cafe'" value="ホームページに戻る">
+                    <input id="submit" type="submit" onclick="location.href='/cafe'" value="トップページに戻る">
                 </div>
             </section>
             <?php $_SESSION = []; ?>

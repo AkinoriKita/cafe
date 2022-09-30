@@ -13,15 +13,15 @@ function validation($request)
     }
 
     if (!empty($request['date'])) {
-        $date = $request['date'];
-        list($y, $m, $d) = explode('-', $date);
+        date_default_timezone_set('Asia/Tokyo');
+        $today = date('y/m/d');
     }
 
     if (empty($request['date'])) {
-        $errors[] = '「予約日」は必須です。存在する日付を入力してください。';
+        $errors[] = '「予約日」は必須です。';
     }
 
-    if (200 < mb_strlen($request['message'])) {
+    if (mb_strlen($request['message']) > 200) {
         $errors[] = '「お問い合わせ」は200文字以内で入力してください。';
     }
 
