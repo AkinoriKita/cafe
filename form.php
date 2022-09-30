@@ -1,6 +1,9 @@
 <?php
 session_start();
 
+require 'validation.php';
+$errors = validation($_POST);
+
 //クリックジャッキング対策
 header('X-FRAME-OPTIONS:DENY');
 
@@ -33,6 +36,10 @@ if (!empty($_POST['btn_submit']) && empty($errors)) {
         .button input {
             cursor: pointer;
         }
+
+        .error {
+            color: red;
+        }
     </style>
 </head>
 
@@ -46,8 +53,18 @@ if (!empty($_POST['btn_submit']) && empty($errors)) {
             $_SESSION['message'] = $_POST['message'];
             $token = $_SESSION['csrfToken'];
             ?>
+
             <section class="section wrapper" id="workshop">
                 <h1 class="section-title">確認画面</h1>
+                <?php if (!empty($errors) && !empty($_POST['btn_submit'])) : ?>
+                    <?php echo '<ul class="error">'; ?>
+                    <?php
+                    foreach ($errors as $error) {
+                        echo '<li>' . $error . '</li>';
+                    }
+                    ?>
+                    <?php echo '</ul>'; ?>
+                <?php endif; ?>
                 <form action="form.php" method="post">
                     <dl>
                         <dt><label for="name">名前</label></dt>
@@ -59,6 +76,9 @@ if (!empty($_POST['btn_submit']) && empty($errors)) {
                         <dt><label for="message">お問い合わせ</label></dt>
                         <dd><textarea id="message" name="message" disabled><?php echo h($_POST['message']); ?></textarea></dd>
                     </dl>
+                    <?php if (!empty($errors) && !empty($_POST['btn_submit'])) : ?>
+                        <p class="error">※前に戻って修正して下さい。</p>
+                    <?php endif; ?>
                     <div class="button" style="margin-bottom: 15px;">
                         <input id="submit" type="submit" name="btn_submit" value="送信">
                         <input type="hidden" name="name" value="<?php echo h($_POST['name']); ?>">
@@ -68,7 +88,7 @@ if (!empty($_POST['btn_submit']) && empty($errors)) {
                         <input type="hidden" name="csrf" value="<?php echo $_POST['csrf'] ?>">
                     </div>
                 </form>
-                <form action="../index.php#page8" method="post">
+                <form action="index.php#page8" method="post">
                     <div class="button">
                         <input id="submit" type="submit" value="戻る">
                     </div>
@@ -90,7 +110,7 @@ if (!empty($_POST['btn_submit']) && empty($errors)) {
                 <p>ご予約ありがとうございます。</p>
                 <p>送信が完了しました。</p>
                 <div class="button">
-                    <input id="submit" type="submit" onclick="location.href='/cafe'" value="ホームページに戻る">
+                    <input id="submit" type="submit" onclick="location.href='/cafe'" value="トップページに戻る">
                 </div>
             </section>
             <?php $_SESSION = []; ?>
