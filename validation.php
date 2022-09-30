@@ -12,13 +12,8 @@ function validation($request)
         $errors[] = '「メールアドレス]は必須です。正しい形式で入力してください。';
     }
 
-    if (!empty($request['date'])) {
-        date_default_timezone_set('Asia/Tokyo');
-        $today = date('y/m/d');
-    }
-
-    if (empty($request['date'])) {
-        $errors[] = '「予約日」は必須です。';
+    if (empty($request['date']) || strtotime($request['date']) < strtotime(date("Y/m/d", strtotime("+1 day")))) {
+        $errors[] = '「予約日」は必須です。明日以降の日付を入力してください。';
     }
 
     if (mb_strlen($request['message']) > 200) {

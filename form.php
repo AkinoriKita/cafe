@@ -77,7 +77,7 @@ if (!empty($_POST['btn_submit']) && empty($errors)) {
                         <dd><textarea id="message" name="message" disabled><?php echo h($_POST['message']); ?></textarea></dd>
                     </dl>
                     <?php if (!empty($errors) && !empty($_POST['btn_submit'])) : ?>
-                        <p class="error">※前に戻って入力し直して下さい。</p>
+                        <p class="error">※前に戻って修正して下さい。</p>
                     <?php endif; ?>
                     <div class="button" style="margin-bottom: 15px;">
                         <input id="submit" type="submit" name="btn_submit" value="送信">
