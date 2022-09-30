@@ -34,7 +34,6 @@ $token = $_SESSION['csrfToken'];
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></script>
     <script src="js/jquery.pagepiling.min.js"></script>
     <script src="js/shopify.js"></script>
     <script src="js/main.js"></script>
@@ -185,15 +184,15 @@ $token = $_SESSION['csrfToken'];
                         <dt><label for="name">名前</label></dt>
                         <dd><input type="text" id="name" name="name" value="<?php if (isset($_SESSION['name'])) {
                                                                                 echo h($_SESSION['name']);
-                                                                            } ?>" required></dd>
+                                                                            } ?>"></dd>
                         <dt><label for="email">メールアドレス</label></dt>
                         <dd><input type="email" id="email" name="email" value="<?php if (isset($_SESSION['email'])) {
                                                                                     echo h($_SESSION['email']);
-                                                                                } ?>" required></dd>
+                                                                                } ?>"></dd>
                         <dt><label for="date">予約日</label></dt>
                         <dd><input type="date" id="date" name="date" value="<?php if (isset($_SESSION['date'])) {
                                                                                 echo h($_SESSION['date']);
-                                                                            } ?>" required></dd>
+                                                                            } ?>"></dd>
                         <dt><label for="message">お問い合わせ</label></dt>
                         <dd><textarea id="message" name="message"><?php if (isset($_SESSION['message'])) {
                                                                         echo h($_SESSION['message']);
