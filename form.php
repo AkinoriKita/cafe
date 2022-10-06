@@ -94,6 +94,19 @@ if (!empty($_POST['btn_submit']) && empty($errors)) {
                     </div>
                 </form>
             </section>
+
+            <?php
+            mb_language("Japanese");
+            mb_internal_encoding("UTF-8");
+
+            $date = date('Y年n月j日', strtotime($_POST['date']));
+            $to = $_POST['email'];
+            $subject = '予約完了メール';
+            $message = $_POST['name'] . '様' . PHP_EOL . PHP_EOL . '以下の日時で予約を受け付けました。' . PHP_EOL . $date . PHP_EOL . PHP_EOL . 'ご来店お待ちしております。';
+            $header = "From: portfolio@cafe.kitaakinori.com";
+
+            mb_send_mail($to, $subject, $message, $header);
+            ?>
         <?php endif; ?>
     <?php endif; ?>
 
@@ -108,9 +121,9 @@ if (!empty($_POST['btn_submit']) && empty($errors)) {
                 <h1 class="section-title">送信完了</h1>
 
                 <p>ご予約ありがとうございます。</p>
-                <p>送信が完了しました。</p>
+                <p>予約完了メールを送信しました。ご確認下さい。</p>
                 <div class="button">
-                    <input id="submit" type="submit" onclick="location.href='/cafe'" value="トップページに戻る">
+                    <input id="submit" type="submit" onclick="location.href='/'" value="トップページに戻る">
                 </div>
             </section>
             <?php $_SESSION = []; ?>
