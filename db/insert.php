@@ -27,9 +27,6 @@ function insertBook($request)
     }
     $sql = 'insert into book (' . $columns . ')values(' . $values . ')';
 
-    // var_dump($sql);
-    // exit();
-
-    $stmt = $pdo->prepare($sql); //プリペアードステートメント
-    $stmt->execute($params); //実行
+    $stmt = $pdo->prepare($sql); 
+    $stmt->execute($params); 
 }
