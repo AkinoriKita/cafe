@@ -427,6 +427,7 @@ WORK SHOP
 /*-------------------------------------------
 responsive
 -------------------------------------------*/
+/* タブレットサイズ */
 @media screen and (max-width: 1078px) {
     .wrapper {
         margin: 0 auto;
@@ -469,6 +470,7 @@ responsive
 
 }
 
+/* スマホサイズ */
 @media screen and (max-width: 863px) {
 
     .section-title {
@@ -588,7 +590,7 @@ responsive
     }
 }
 
-/* iPhoneSE用 */
+/* iPhoneSE */
 @media screen and (max-width: 375px),
 (max-height: 720px) {
 
@@ -619,6 +621,7 @@ responsive
     }
 }
 
+/* 高さで変更 */
 @media screen and (max-height: 915px) {
 
     /*-------------------------------------------

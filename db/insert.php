@@ -17,6 +17,7 @@ function insertBook($request)
     $columns = '';
     $values = '';
 
+    // キーを取り出す
     foreach (array_keys($params) as $key) {
         if ($count++ > 0) {
             $columns .= ',';
@@ -25,8 +26,10 @@ function insertBook($request)
         $columns .= $key;
         $values .= ':' . $key;
     }
+
+    // 名前付きプレースホルダーでインサート
     $sql = 'insert into book (' . $columns . ')values(' . $values . ')';
 
-    $stmt = $pdo->prepare($sql); 
-    $stmt->execute($params); 
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute($params);
 }

@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+// バリデーション読み込み
 require 'validation.php';
 $errors = validation($_POST);
 
@@ -44,7 +45,9 @@ if (!empty($_POST['btn_submit']) && empty($errors)) {
 </head>
 
 <body>
+    <!-- ページフラッグでページ切り替え -->
     <?php if ($pageFlag === 0) : ?>
+        <!-- csrfトークン確認 -->
         <?php if ($_POST['csrf'] === $_SESSION['csrfToken']) : ?>
             <?php
             $_SESSION['name'] = $_POST['name'];
@@ -53,18 +56,20 @@ if (!empty($_POST['btn_submit']) && empty($errors)) {
             $_SESSION['message'] = $_POST['message'];
             $token = $_SESSION['csrfToken'];
             ?>
-
+            <!-- 確認画面 -->
             <section class="section wrapper" id="workshop">
                 <h1 class="section-title">確認画面</h1>
                 <?php if (!empty($errors) && !empty($_POST['btn_submit'])) : ?>
                     <?php echo '<ul class="error">'; ?>
                     <?php
+                    // エラー表示
                     foreach ($errors as $error) {
                         echo '<li>' . $error . '</li>';
                     }
                     ?>
                     <?php echo '</ul>'; ?>
                 <?php endif; ?>
+                <!-- 入力内容表示 -->
                 <form action="form.php" method="post">
                     <dl>
                         <dt><label for="name">名前</label></dt>
@@ -76,6 +81,7 @@ if (!empty($_POST['btn_submit']) && empty($errors)) {
                         <dt><label for="message">お問い合わせ</label></dt>
                         <dd><textarea id="message" name="message" disabled><?php echo h($_POST['message']); ?></textarea></dd>
                     </dl>
+                    <!-- エラーがあって送信ボタンが押されたら -->
                     <?php if (!empty($errors) && !empty($_POST['btn_submit'])) : ?>
                         <p class="error">※前に戻って修正して下さい。</p>
                     <?php endif; ?>
@@ -95,6 +101,7 @@ if (!empty($_POST['btn_submit']) && empty($errors)) {
                 </form>
             </section>
 
+            <!-- 予約確認メール送信 -->
             <?php
             mb_language("Japanese");
             mb_internal_encoding("UTF-8");
@@ -107,16 +114,19 @@ if (!empty($_POST['btn_submit']) && empty($errors)) {
 
             mb_send_mail($to, $subject, $message, $header);
             ?>
+
         <?php endif; ?>
     <?php endif; ?>
 
+    <!-- ページフラッグでページ切り替え -->
     <?php if ($pageFlag === 1) : ?>
+        <!-- csrfトークン確認 -->
         <?php if ($_POST['csrf'] === $_SESSION['csrfToken']) : ?>
-
+            <!-- DBインサート -->
             <?php require 'db/insert.php';
             insertBook($_POST);
             ?>
-
+            <!-- 送信完了画面 -->
             <section class="section wrapper" id="workshop">
                 <h1 class="section-title">送信完了</h1>
 
@@ -126,6 +136,7 @@ if (!empty($_POST['btn_submit']) && empty($errors)) {
                     <input id="submit" type="submit" onclick="location.href='/'" value="トップページに戻る">
                 </div>
             </section>
+            <!-- csrfトークン・入力内容セッション削除 -->
             <?php $_SESSION = []; ?>
         <?php endif; ?>
     <?php endif; ?>

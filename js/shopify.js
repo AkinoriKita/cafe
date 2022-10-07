@@ -1,6 +1,4 @@
-// La Estrella
-
-/*<![CDATA[*/
+// Shopify埋め込み１つ目
 (function () {
     var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
     if (window.ShopifyBuy) {
@@ -132,12 +130,8 @@
         });
     }
 })();
-/*]]>*/
 
-
-// Airumá
-
-/*<![CDATA[*/
+// Shopify埋め込み１つ目
 (function () {
     var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
     if (window.ShopifyBuy) {
@@ -269,4 +263,3 @@
         });
     }
 })();
-/*]]>*/

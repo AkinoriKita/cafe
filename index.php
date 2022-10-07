@@ -34,9 +34,11 @@ $token = $_SESSION['csrfToken'];
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="js/jquery.pagepiling.min.js"></script>
-    <script src="js/shopify.js"></script>
     <script src="js/main.js"></script>
+    <!-- pagepilling -->
+    <script src="js/jquery.pagepiling.min.js"></script>
+    <!-- shopify埋め込み -->
+    <script src="js/shopify.js"></script>
 </head>
 
 <body>
@@ -55,12 +57,13 @@ $token = $_SESSION['csrfToken'];
                 <li><a href="https://coffeemodify.myshopify.com/" target=”_blank” rel="nofollow">ONLINE SHOP<span> </span><i class="fas fa-external-link-alt"></i></a></li>
             </ul>
         </nav>
-
+        <!-- ハンバーガーメニュー -->
         <div class="hamburger">
             <span></span>
             <span></span>
             <span></span>
         </div>
+        <!-- ハンバーガーメニューのナビ -->
         <nav class="navi-sp">
             <ul>
                 <li data-menuanchor="page1" class="active page1"><a href="#page1">TOP</a></li>
@@ -79,7 +82,7 @@ $token = $_SESSION['csrfToken'];
             <section class="section" id="top">
                 <div id="mainvisual"></div>
             </section>
-
+            <!-- ニュース -->
             <section class="section wrapper" id="news">
                 <h2 class="section-title">NEWS</h2>
                 <dl id="news">
@@ -93,7 +96,7 @@ $token = $_SESSION['csrfToken'];
                     <dt class="dt8"><a href="https://coffeemodify.myshopify.com/blogs/news/homepage-renewal" target=”_blank” rel="nofollow">ホームページリニューアルのお知らせ</a></dt>
                 </dl>
             </section>
-
+            <!-- コンセプト -->
             <section class="section wrapper" id="concept">
                 <div>
                     <h2 class="section-title">CONCEPT</h2>
@@ -107,7 +110,7 @@ $token = $_SESSION['csrfToken'];
                     </div>
                 </div>
             </section>
-
+            <!-- ビーンズ -->
             <section class="section wrapper" id="beans">
                 <div>
                     <h2 class="section-title">BEANS</h2>
@@ -119,7 +122,7 @@ $token = $_SESSION['csrfToken'];
                     </div>
                 </div>
             </section>
-
+            <!-- shopify埋め込み1つ目 -->
             <section class="section wrapper pp-scrollable" id="shopify">
                 <div class="flexbox">
                     <img src="img/coffee-product.jpg" alt="Ethiopia Alaka Washed" class="scrollUp">
@@ -131,7 +134,7 @@ $token = $_SESSION['csrfToken'];
                     </div>
                 </div>
             </section>
-
+            <!-- shopify埋め込み2つ目 -->
             <section class="section wrapper pp-scrollable" id="shopify2">
                 <div class="flexbox">
                     <img src="img/coffee-product2.jpg" alt="Airumá Pulped Natural" class="scrollUp">
@@ -143,11 +146,12 @@ $token = $_SESSION['csrfToken'];
                     </div>
                 </div>
             </section>
-
-
+            <!-- ロケーション -->
             <section class="section wrapper accordion-area" id="location">
                 <h2 class="section-title">LOCATION</h2>
+                <!-- 吉祥寺店 -->
                 <h3 class="titleKichijoji">KICHIJOJI<i class="fas fa-caret-down"></i></h3>
+                <!-- ロケーション詳細 -->
                 <div class="location-text boxKichijoji">
                     <p>
                         東京都武蔵野市吉祥寺本町<br>
@@ -158,7 +162,9 @@ $token = $_SESSION['csrfToken'];
                     </p>
                     <img src="img/location-Kichijoji.jpg" alt="ALL Coffee Roasters 吉祥寺店">
                 </div>
+                <!-- 金沢店 -->
                 <h3 class="titleKanazawa">KANAZAWA<i class="fas fa-caret-down"></i></h3>
+                <!-- ロケーション詳細 -->
                 <div class="location-text boxKanazawa">
                     <p>
                         石川県金沢市新竪町3丁目<br>
@@ -170,7 +176,7 @@ $token = $_SESSION['csrfToken'];
                     <img src="img/location-Kanazawa.jpg" alt="ALL Coffee Roasters 金沢店">
                 </div>
             </section>
-
+            <!-- ワークショップ -->
             <section class="section wrapper" id="workshop">
                 <h2 class="section-title">WORK SHOP</h2>
                 <p><span>
@@ -179,6 +185,7 @@ $token = $_SESSION['csrfToken'];
                     </span>
                     <a href="https://coffeemodify.myshopify.com/blogs/news/workshop" target=”_blank” rel="nofollow">詳しくはこちら</a>
                 </p>
+                <!-- 予約フォーム -->
                 <form action="form.php" method="post">
                     <dl>
                         <dt><label for="name">名前</label></dt>
@@ -203,9 +210,7 @@ $token = $_SESSION['csrfToken'];
                 </form>
             </section>
     </main>
-
     </div>
-
 </body>
 
 </html>

@@ -25,7 +25,7 @@ window.onload = function () {
     nav.addEventListener('click', hamburgerClick);
 
     /*-------------------------------------------
-    ハンバーガーメニューナビアニメーション
+    ハンバーガーメニューナビのアニメーション
     -------------------------------------------*/
     const page1 = document.querySelector('.page1')
     const page2 = document.querySelector('.page2')
@@ -66,7 +66,7 @@ window.onload = function () {
     const boxKichijoji = document.querySelector('.boxKichijoji')
     const boxKanazawa = document.querySelector('.boxKanazawa')
 
-    // h3タイトルクリックでactiveクラス追加、削除
+    // 地名クリックでロケーション詳細にactiveクラス追加、削除
     const openKichijojiBox = () => {
         if (boxKichijoji.classList.contains('active')) {
             boxKichijoji.classList.remove('active');
