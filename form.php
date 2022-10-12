@@ -41,6 +41,10 @@ if (!empty($_POST['btn_submit']) && empty($errors)) {
         .error {
             color: red;
         }
+
+        dd {
+            margin-left: 0;
+        }
     </style>
 </head>
 

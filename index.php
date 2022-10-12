@@ -30,13 +30,13 @@ $token = $_SESSION['csrfToken'];
     <link rel="shortcut icon" href="img/favicon.ico">
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="css/jquery.pagepiling.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
     <!-- pagepilling -->
     <script src="js/jquery.pagepiling.min.js"></script>
+    <link rel="stylesheet" href="css/jquery.pagepiling.css">
     <!-- shopify埋め込み -->
     <script src="js/shopify.js"></script>
 </head>
